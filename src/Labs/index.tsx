@@ -8,6 +8,9 @@ export default function Labs() {
     <div>
       <h1>Labs</h1>
       <h2>Xiaojun Yu- CS5610</h2>
+      Please
+<a href="https://github.com/yogiyu1/kambaz-react-web-app" id="wd-github">click here</a>
+To visit my repository<br/>
       <TOC />
       <Routes>
         <Route path="/" element={<Navigate to="Lab1" />} />
