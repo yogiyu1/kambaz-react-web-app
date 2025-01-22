@@ -237,8 +237,8 @@ Please
 to get dummy text<br/>
 
 Please
-<a href="https://github.com/jannunzi/kambaz-react-web-app-cs5610-sp25/tree/a1" id="wd-github">click here</a>
-to get dummy text<br/>
+<a href="https://github.com/yogiyu1/kambaz-react-web-app" id="wd-github">click here</a>
+To visit my repository<br/>
     </div>
 
 );
