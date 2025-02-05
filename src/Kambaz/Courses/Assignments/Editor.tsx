@@ -1,112 +1,102 @@
+import { Form, Button, Card, Row, Col } from "react-bootstrap";
+
 export default function AssignmentEditor() {
-    return (
-      <div id="wd-assignments-editor" style={{ fontFamily: "Arial, sans-serif", margin: "20px" }}>
 
-        <h2>Assignment Name</h2>
-        <input id="wd-name" value="A1 - ENV + HTML" style={{ width: "100%", marginBottom: "10px" }} />
-        <textarea
-          id="wd-description"
-          cols={46}
-          rows={8}
-          style={{ width: "100%", marginBottom: "20px" }}
-        >
-          The assignment is available online. Submit a link to the landing page of your web
-          application running on Netlify. The landing page should include the following: Your full
-          name, section links to each of the lab assignments, links to the Kanbas application, and
-          all relevant source code repositories. The Kanbas application should include a link to
-          navigate back to the landing page.
-        </textarea>
-  
-        <div style={{ marginBottom: "20px" }}>
-          <h3>Submission Type</h3>
-          <select id="wd-submission-type" style={{ width: "100%", marginBottom: "10px" }}>
-            <option value="Online">Online</option>
-            <option value="In-Person">In-Person</option>
-          </select>
-          <fieldset style={{ border: "1px solid #ccc", padding: "10px", borderRadius: "5px" }}>
-            <legend>Online Entry Options</legend>
-            <div>
-              <input type="checkbox" id="wd-online-text" />
-              <label htmlFor="wd-online-text">Text Entry</label>
-            </div>
-            <div>
-              <input type="checkbox" id="wd-website-url" />
-              <label htmlFor="wd-website-url">Website URL</label>
-            </div>
-            <div>
-              <input type="checkbox" id="wd-media-recordings" />
-              <label htmlFor="wd-media-recordings">Media Recordings</label>
-            </div>
-            <div>
-              <input type="checkbox" id="wd-student-annotation" />
-              <label htmlFor="wd-student-annotation">Student Annotation</label>
-            </div>
-            <div>
-              <input type="checkbox" id="wd-file-uploads" />
-              <label htmlFor="wd-file-uploads">File Uploads</label>
-            </div>
-          </fieldset>
-        </div>
-  
-        <div style={{ marginBottom: "20px" }}>
-          <h3>Assign</h3>
-          <table style={{ width: "100%", borderCollapse: "collapse" }}>
-            <tr>
-              <td style={{ textAlign: "right", paddingRight: "10px", verticalAlign: "middle" }}>
-                <label htmlFor="wd-text-fields-people">Assign to</label>
-              </td>
-              <td>
-                <input
-                  placeholder="Everyone"
-                  id="wd-text-fields-people"
-                  style={{ width: "98%" }}
-                />
-              </td>
-            </tr>
-  
-            <tr>
-              <td style={{ textAlign: "right", paddingRight: "10px", verticalAlign: "middle" }}>
-                <label htmlFor="wd-due-date">Due</label>
-              </td>
-              <td>
-                <input
-                  type="date"
-                  id="wd-due-date"
-                  value="2024-05-13"
-                  style={{ width: "99%" }}
-                />
-              </td>
-            </tr>
-  
-            <tr>
-  <td style={{ textAlign: "right", paddingRight: "10px", verticalAlign: "middle" }}>
-    <label htmlFor="wd-available-from">Available from</label>
-  </td>
-  <td style={{ display: "flex", alignItems: "center", gap: "10px" }}>
-    <input
-      type="date"
-      id="wd-available-from"
-      value="2024-05-06"
-      style={{ flex: "1" }}
-    />
-    <label htmlFor="wd-available-until" style={{ whiteSpace: "nowrap" }}>Until</label>
-    <input
-      type="date"
-      id="wd-available-until"
-      value="2024-05-28"
-      style={{ flex: "1" }}
-    />
-  </td>
-</tr>
+  return (
+    <div className="container mt-4">
+      <h2>Assignment Name</h2>
+      <Form>
+        <Form.Group className="mb-3">
+          <Form.Control type="text" defaultValue="A1" />
+        </Form.Group>
 
-          </table>
-        </div>
-  
-        <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
-          <button style={{ padding: "5px 10px" }}>Cancel</button>
-          <button style={{ padding: "5px 10px" }}>Save</button>
-        </div>
+        <Form.Group className="mb-3">
+          <Form.Label>Description</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={6}
+            defaultValue="The assignment is available online. Submit a link to the landing page..."
+          />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Points</Form.Label>
+          <Form.Control type="number" defaultValue="100" />
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Assignment Group</Form.Label>
+          <Form.Control as="select">
+            <option>ASSIGNMENTS</option>
+          </Form.Control>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Display Grade as</Form.Label>
+          <Form.Control as="select">
+            <option>Percentage</option>
+          </Form.Control>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+  <Form.Label>Submission Type</Form.Label>
+  <Card className="p-3">
+    <Form.Group className="mb-3">
+      <Form.Label>Submission Type</Form.Label>
+      <Form.Control type="text" defaultValue="Online" />
+
+
+    </Form.Group>
+
+    <Form.Group className="mb-3">
+      <Form.Label className="fw-bold">Online Entry Options</Form.Label>
+      <div className="border p-3 rounded">
+        <Form.Check type="checkbox" label="Text Entry" />
+        <Form.Check type="checkbox" label="Website URL" defaultChecked />
+        <Form.Check type="checkbox" label="Media Recordings" />
+        <Form.Check type="checkbox" label="Student Annotation" />
+        <Form.Check type="checkbox" label="File Uploads" />
       </div>
-    );
-  }
-  
+    </Form.Group>
+  </Card>
+</Form.Group>
+
+      <Form.Group className="mb-3">
+        <Form.Label>Assign</Form.Label>
+        <Card className="p-3">
+          <Form.Group className="mb-3">
+            <Form.Label>Assign to</Form.Label>
+            <Form.Control type="text" defaultValue="Everyone" />
+          </Form.Group>
+
+          <Form.Group className="mb-3">
+            <Form.Label>Due</Form.Label>
+            <Form.Control type="datetime-local" defaultValue="2024-05-13T23:59" />
+          </Form.Group>
+
+          <Row>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Available from</Form.Label>
+                <Form.Control type="datetime-local" defaultValue="2024-05-06T00:00" />
+              </Form.Group>
+            </Col>
+            <Col>
+              <Form.Group className="mb-3">
+                <Form.Label>Until</Form.Label>
+                <Form.Control type="datetime-local" defaultValue="2024-05-28T00:00" />
+              </Form.Group>
+            </Col>
+          </Row>
+        </Card>
+      </Form.Group>
+
+      <div className="d-flex justify-content-end gap-2">
+        <Button variant="secondary">Cancel</Button>
+        <Button variant="danger">Save</Button>
+      </div>
+    </Form>
+    </div>
+
+  );
+}
