@@ -1,8 +1,7 @@
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
 
 export default function AssignmentEditor() {
-  const { week } = useParams();  // 读取 URL 里的 `week`
-  console.log("当前编辑的作业是:", week);
+
   return (
     <div className="container mt-4">
       <h2>Assignment Name</h2>

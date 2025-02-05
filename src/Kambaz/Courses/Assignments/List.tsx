@@ -3,6 +3,7 @@ import { Button, Form, InputGroup } from "react-bootstrap";
 import { BsGripVertical, BsThreeDotsVertical, BsSearch } from "react-icons/bs";
 import { FaPlus } from "react-icons/fa";
 import GreenCheckmark from "./GreenCheckmark";
+import AssignmentEditor from "./Editor";
 
 export default function AssignmentsList() {
   return (
@@ -93,6 +94,7 @@ export default function AssignmentsList() {
           </Form.Group>
         ))}
       </Form>
+      <AssignmentEditor/>
     </div>
   );
 }
